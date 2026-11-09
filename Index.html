@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0756a5">
+<meta name="description" content="Kuis edukasi tentang pentingnya servis berkala sepeda motor Yamaha.">
+<title>Quiz Yamaha | Makmur Motor</title>
+<style>
+:root{--blue:#0756a5;--blue2:#0b79d0;--ink:#14243a;--muted:#65758b;--bg:#f2f6fb;--line:#dce5ef;--green:#16834a;--red:#c43c3c}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(160deg,#e8f3ff 0,#f5f8fc 45%,#eef3f9 100%);color:var(--ink);min-height:100vh}
+.wrap{width:min(760px,100%);margin:auto;padding:22px 16px 40px}
+header{display:flex;align-items:center;gap:12px;margin:4px 0 18px}
+.logo{width:48px;height:48px;border-radius:15px;background:linear-gradient(145deg,#087bd3,#063d83);display:grid;place-items:center;color:white;font-size:25px;box-shadow:0 8px 20px #0756a533}
+.brand{font-weight:850;letter-spacing:.3px;font-size:16px}.brand small{display:block;color:var(--muted);font-weight:600;font-size:12px;margin-top:2px}
+.hero{background:linear-gradient(130deg,#06458f,#087bd3);color:#fff;border-radius:25px;padding:27px 24px;position:relative;overflow:hidden;box-shadow:0 15px 35px #0756a52c}
+.hero:after{content:"🏍️";position:absolute;right:14px;bottom:-25px;font-size:112px;opacity:.17;transform:rotate(-12deg)}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:1.6px;opacity:.8}
+h1{font-size:clamp(26px,6vw,39px);line-height:1.08;margin:9px 0 10px;max-width:500px}
+.hero p{margin:0;max-width:470px;color:#e2f1ff;line-height:1.55}
+.panel{background:#fff;border:1px solid #e6edf5;border-radius:22px;padding:22px;margin-top:16px;box-shadow:0 8px 25px #193b5b0b}
+.field{display:block;font-weight:750;font-size:13px;margin:0 0 8px}
+input{width:100%;padding:14px 15px;border:1px solid var(--line);border-radius:13px;font:inherit;outline:none}
+input:focus{border-color:var(--blue2);box-shadow:0 0 0 3px #0b79d01b}
+.btn{border:0;border-radius:13px;padding:14px 18px;font:inherit;font-weight:800;cursor:pointer;transition:.15s}
+.btn:active{transform:scale(.985)}
+.primary{background:var(--blue);color:#fff;width:100%;margin-top:14px}
+.secondary{background:#eaf3fc;color:var(--blue)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.note{font-size:12px;color:var(--muted);line-height:1.5;margin:12px 0 0}
+.hidden{display:none!important}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:750}
+.progress{height:8px;background:#e9eff6;border-radius:99px;overflow:hidden;margin:12px 0 20px}
+.bar{height:100%;background:linear-gradient(90deg,#087bd3,#39a2f4);width:0%;transition:width .25s}
+.question{font-size:21px;line-height:1.35;font-weight:850;margin:0 0 18px}
+.options{display:grid;gap:10px}
+.option{width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:14px;display:flex;gap:12px;align-items:flex-start;color:var(--ink);font:inherit;cursor:pointer}
+.option:hover{border-color:#76afe0;background:#f8fbff}
+.option.selected{border-color:var(--blue2);background:#edf6ff}
+.letter{width:27px;height:27px;flex:0 0 27px;border-radius:9px;background:#edf2f8;display:grid;place-items:center;font-size:12px;font-weight:850;color:#496078}
+.option.selected .letter{background:var(--blue);color:#fff}
+.option.correct{border-color:#2a9a5d;background:#effaf3}.option.wrong{border-color:#d85a5a;background:#fff3f3}
+.feedback{font-size:13px;line-height:1.5;margin:14px 0 0;padding:12px 14px;border-radius:12px;background:#f3f6fa;color:#45566b}
+.actions{display:flex;gap:10px;margin-top:18px}.actions .btn{flex:1}
+.score{font-size:58px;line-height:1;font-weight:900;color:var(--blue);text-align:center;margin:8px 0}
+.center{text-align:center}
+.result-title{font-size:24px;font-weight:900;margin:8px 0}
+.sharegrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.sharegrid a{display:block;text-decoration:none;text-align:center;border-radius:12px;padding:13px;font-weight:800;font-size:13px}
+.fb{background:#eaf1ff;color:#1457b8}.wa{background:#e9f9ef;color:#11783c}
+footer{text-align:center;font-size:11px;color:#8794a5;margin:20px 0 0}
+@media(max-width:420px){.hero{padding:23px 19px}.panel{padding:18px}.question{font-size:19px}.sharegrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="logo">🏁</div><div class="brand">QUIZ YAMAHA<small>MAKMUR MOTOR • EDUKASI PELANGGAN</small></div></header>
+<section class="hero">
+<div class="eyebrow">TANTANG DIRIMU!</div>
+<h1>Seberapa paham kamu soal servis berkala?</h1>
+<p>Jawab pertanyaan seputar perawatan sepeda motor Yamaha. Uji pengetahuanmu dan bagikan hasilnya!</p>
+</section>
+
+<section id="start" class="panel">
+<label class="field" for="player">Masukkan nama kamu</label>
+<input id="player" maxlength="28" placeholder="Contoh: Andi" autocomplete="name">
+<button class="btn primary" id="startBtn">MULAI KUIS →</button>
+<p class="note">Ada 10 pertanyaan. Pilih satu jawaban terbaik di setiap pertanyaan. Nilai akan muncul setelah kuis selesai.</p>
+</section>
+
+<section id="game" class="panel hidden">
+<div class="topline"><span id="counter">PERTANYAAN 1 DARI 10</span><span id="points">0 POIN</span></div>
+<div class="progress"><div class="bar" id="bar"></div></div>
+<h2 class="question" id="question"></h2>
+<div class="options" id="options"></div>
+<div id="feedback" class="feedback hidden" aria-live="polite"></div>
+<div class="actions"><button class="btn secondary" id="nextBtn" disabled>LANJUT →</button></div>
+</section>
+
+<section id="result" class="panel hidden">
+<div class="center">
+<div style="font-size:42px">🏆</div>
+<div class="result-title" id="resultHeading">Kuis selesai!</div>
+<div class="score"><span id="score">0</span><span style="font-size:22px">/100</span></div>
+<div id="resultMessage">Terus tingkatkan pengetahuanmu!</div>
+</div>
+<div class="sharegrid">
+<a class="wa" id="shareWa" href="#" target="_blank" rel="noopener">Bagikan ke WhatsApp</a>
+<a class="fb" id="shareFb" href="#" target="_blank" rel="noopener">Bagikan ke Facebook</a>
+</div>
+<button class="btn primary" id="againBtn">ULANGI KUIS</button>
+<p class="note">Catatan: hasil kuis dihitung di perangkat ini. Versi ini belum menyimpan peringkat peserta secara online.</p>
+</section>
+<footer>Quiz Yamaha • Makmur Motor<br>Informasi servis mengikuti buku pedoman pemilik dan rekomendasi bengkel resmi Yamaha.</footer>
+</div>
+<script>
+const questions=[
+{q:"Apa tujuan utama melakukan servis berkala pada sepeda motor Yamaha?",a:["Menjaga performa dan kondisi motor","Mengubah kapasitas mesin","Membuat motor lebih berat","Mengganti warna kendaraan"],c:0,e:"Servis berkala membantu menjaga performa sekaligus memeriksa kondisi komponen motor."},
+{q:"Mengapa oli mesin perlu diganti sesuai jadwal?",a:["Agar suara klakson lebih keras","Untuk membantu melumasi dan mengurangi gesekan komponen mesin","Agar tangki bensin lebih besar","Supaya ban tidak perlu diperiksa"],c:1,e:"Oli membantu melumasi komponen mesin. Ikuti jenis dan interval penggantian pada buku pedoman pemilik."},
+{q:"Apa tindakan tepat jika rem terasa kurang pakem?",a:["Tetap berkendara seperti biasa","Menunggu sampai rem tidak berfungsi","Segera periksa ke bengkel dan hindari penggunaan yang berisiko","Cukup mencuci motor"],c:2,e:"Rem berkaitan langsung dengan keselamatan. Periksakan segera dan jangan abaikan gejalanya."},
+{q:"Komponen apa yang berhubungan langsung dengan tekanan dan daya cengkeram ke jalan?",a:["Spion","Ban","Cover bodi","Standar samping"],c:1,e:"Kondisi dan tekanan ban perlu diperiksa secara rutin sesuai rekomendasi."},
+{q:"Kapan sebaiknya servis berkala dilakukan?",a:["Hanya ketika motor mogok","Hanya sebelum perjalanan jauh","Sesuai jadwal jarak tempuh atau waktu pada buku pedoman pemilik","Setelah motor dijual"],c:2,e:"Jadwal servis dapat berbeda menurut model dan kondisi penggunaan. Ikuti buku pedoman pemilik."},
+{q:"Mengapa filter udara perlu diperiksa dan dirawat?",a:["Karena membantu menyaring udara yang masuk ke mesin","Untuk menambah kapasitas oli","Untuk mengatur tekanan ban","Untuk menyalakan lampu utama"],c:0,e:"Filter udara membantu menyaring kotoran agar udara masuk ke mesin lebih bersih."},
+{q:"Apa manfaat pemeriksaan lampu dan sistem kelistrikan?",a:["Membuat motor lebih cepat tanpa batas","Mendukung fungsi kendaraan dan keselamatan saat berkendara","Mengurangi ukuran mesin","Menghilangkan kebutuhan servis"],c:1,e:"Lampu dan kelistrikan yang berfungsi baik membantu pengendara melihat dan terlihat."},
+{q:"Jika terdengar suara tidak biasa dari mesin, apa langkah yang bijak?",a:["Menaikkan kecepatan agar suara hilang","Mengabaikannya selama motor masih berjalan","Meminta pemeriksaan teknisi untuk mengetahui penyebabnya","Melepas semua komponen mesin sendiri"],c:2,e:"Suara yang tidak biasa dapat menjadi tanda adanya masalah. Pemeriksaan teknisi membantu menemukan penyebabnya."},
+{q:"Apakah motor Yamaha yang masih baru tetap memerlukan servis berkala?",a:["Ya, sesuai jadwal perawatan yang ditentukan","Tidak, sampai motor berusia lima tahun","Tidak, jika jarang dicuci","Hanya jika warna bodi memudar"],c:0,e:"Motor baru tetap membutuhkan pemeriksaan dan perawatan sesuai buku pedoman pemilik."},
+{q:"Apa keuntungan menyimpan catatan servis kendaraan?",a:["Membuat nomor polisi berubah","Membantu memantau riwayat perawatan dan pekerjaan yang sudah dilakukan","Mengganti tipe kendaraan","Membuat bahan bakar tidak pernah habis"],c:1,e:"Catatan servis membantu pemilik dan teknisi meninjau riwayat perawatan kendaraan."}
+];
+let name="",index=0,score=0,answered=false;
+const $=id=>document.getElementById(id);
+function show(id){["start","game","result"].forEach(x=>$(x).classList.toggle("hidden",x!==id))}
+$("startBtn").addEventListener("click",()=>{
+ name=$("player").value.trim();
+ if(!name){$("player").focus();$("player").placeholder="Isi nama terlebih dahulu";return}
+ index=0;score=0;render();show("game");
+});
+function render(){
+ answered=false;
+ $("counter").textContent=`PERTANYAAN ${index+1} DARI ${questions.length}`;
+ $("points").textContent=`${score} POIN`;
+ $("bar").style.width=`${index/questions.length*100}%`;
+ $("question").textContent=questions[index].q;
+ $("feedback").classList.add("hidden");$("feedback").textContent="";
+ $("nextBtn").disabled=true;$("nextBtn").textContent=index===questions.length-1?"LIHAT HASIL →":"LANJUT →";
+ $("options").innerHTML="";
+ questions[index].a.forEach((label,i)=>{
+  const b=document.createElement("button");b.className="option";
+  const letter=document.createElement("span");letter.className="letter";letter.textContent=String.fromCharCode(65+i);
+  const t=document.createElement("span");t.textContent=label;b.append(letter,t);
+  b.addEventListener("click",()=>choose(i,b));$("options").append(b);
+ });
+}
+function choose(choice,button){
+ if(answered)return;answered=true;
+ const q=questions[index];const buttons=[...$("options").children];
+ buttons.forEach((b,i)=>{b.disabled=true;if(i===q.c)b.classList.add("correct");});
+ if(choice===q.c){score+=10;button.classList.add("selected");$("feedback").textContent="Tepat! "+q.e;}
+ else{$("feedback").textContent="Belum tepat. "+q.e;button.classList.add("wrong");}
+ $("points").textContent=`${score} POIN`;
+ $("feedback").classList.remove("hidden");$("nextBtn").disabled=false;
+}
+$("nextBtn").addEventListener("click",()=>{if(index<questions.length-1){index++;render()}else finish()});
+function finish(){
+ show("result");$("bar").style.width="100%";$("score").textContent=score;
+ $("resultHeading").textContent=`Hebat, ${name}!`;
+ $("resultMessage").textContent=score>=80?"Luar biasa! Pengetahuan servis berkala kamu sangat baik.":score>=60?"Bagus! Terus tingkatkan pengetahuan tentang perawatan motor.":"Terus belajar, ya! Servis berkala penting untuk menjaga motor tetap prima.";
+ const msg=`Saya ${name} mendapat skor ${score}/100 di Quiz Yamaha Makmur Motor tentang pentingnya servis berkala! Yuk, coba kuisnya juga: ${location.href}`;
+ $("shareWa").href="https://wa.me/?text="+encodeURIComponent(msg);
+ $("shareFb").href="https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(location.href);
+}
+$("againBtn").addEventListener("click",()=>{index=0;score=0;show("start")});
+</script>
+</body>
+</html>
